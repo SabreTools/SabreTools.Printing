@@ -34,7 +34,7 @@ namespace SabreTools.Printing
 #if NET48
             string valueString = value.ToString();
 #else
-            string valueString = (value == null ? "[NULL]" : value.ToString());
+            string valueString = (value == null ? "[NULL]" : value.Value.ToString());
 #endif
 
             return sb.AppendLine($"{prefixString}: {valueString}");
