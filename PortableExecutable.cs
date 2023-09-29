@@ -311,7 +311,7 @@ namespace SabreTools.Printing
                     continue;
                 }
 
-                builder.AppendLine(entry.Name, "    Name");
+                builder.AppendLine(entry.Name, "    Name", Encoding.ASCII);
                 builder.AppendLine(entry.VirtualSize, "    Virtual size");
                 builder.AppendLine(entry.VirtualAddress, "    Virtual address");
                 builder.AppendLine(entry.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "    Physical address");
@@ -360,7 +360,7 @@ namespace SabreTools.Printing
                 {
                     if (entry.ShortName != null)
                     {
-                        builder.AppendLine(entry.ShortName, "    Short name");
+                        builder.AppendLine(entry.ShortName, "    Short name", Encoding.ASCII);
                     }
                     else
                     {
@@ -438,7 +438,7 @@ namespace SabreTools.Printing
                 }
                 else if (currentSymbolType == 4)
                 {
-                    builder.AppendLine(entry.AuxFormat4FileName, "    File name");
+                    builder.AppendLine(entry.AuxFormat4FileName, "    File name", Encoding.ASCII);
                     auxSymbolsRemaining--;
                 }
                 else if (currentSymbolType == 5)
@@ -1036,7 +1036,7 @@ namespace SabreTools.Printing
             if (entry.NameOffset != default)
             {
                 builder.AppendLine(entry.NameOffset, $"{padding}Name offset");
-                builder.AppendLine(entry.Name?.UnicodeString, $"{padding}Name ({entry.Name?.Length ?? 0})");
+                builder.AppendLine(entry.Name?.UnicodeString, $"{padding}Name ({entry.Name?.Length ?? 0})", Encoding.Unicode);
             }
             else
             {
