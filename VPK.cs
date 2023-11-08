@@ -17,11 +17,7 @@ namespace SabreTools.Printing
             Print(builder, file.DirectoryItems);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -38,11 +34,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExtendedHeader header)
-#else
         private static void Print(StringBuilder builder, ExtendedHeader? header)
-#endif
         {
             builder.AppendLine("  Extended Header Information:");
             builder.AppendLine("  -------------------------");
@@ -60,11 +52,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ArchiveHash[] entries)
-#else
         private static void Print(StringBuilder builder, ArchiveHash?[]? entries)
-#endif
         {
             builder.AppendLine("  Archive Hashes Information:");
             builder.AppendLine("  -------------------------");
@@ -93,11 +81,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryItem[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryItem?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Items Information:");
             builder.AppendLine("  -------------------------");
@@ -130,11 +114,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryEntry entry)
-#else
         private static void Print(StringBuilder builder, DirectoryEntry? entry)
-#endif
         {
             builder.AppendLine("    Directory Entry:");
             builder.AppendLine("    -------------------------");

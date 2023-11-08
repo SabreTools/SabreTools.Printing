@@ -19,11 +19,7 @@ namespace SabreTools.Printing
             Print(builder, binary.DirectoryEntries);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FileHeader header)
-#else
         private static void Print(StringBuilder builder, FileHeader? header)
-#endif
         {
             builder.AppendLine("  File Header Information:");
             builder.AppendLine("  -------------------------");
@@ -65,11 +61,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SectorNumber[] sectorNumbers, string name)
-#else
         private static void Print(StringBuilder builder, SectorNumber?[]? sectorNumbers, string name)
-#endif
         {
             builder.AppendLine($"  {name} Sectors Information:");
             builder.AppendLine("  -------------------------");
@@ -87,11 +79,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryEntry[] directoryEntries)
-#else
         private static void Print(StringBuilder builder, DirectoryEntry?[]? directoryEntries)
-#endif
         {
             builder.AppendLine("  Directory Entries Information:");
             builder.AppendLine("  -------------------------");

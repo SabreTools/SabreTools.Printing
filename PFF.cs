@@ -16,11 +16,7 @@ namespace SabreTools.Printing
             Print(builder, archive.Footer);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -39,11 +35,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Segment[] segments)
-#else
         private static void Print(StringBuilder builder, Segment?[]? segments)
-#endif
         {
             builder.AppendLine("  Segments Information:");
             builder.AppendLine("  -------------------------");
@@ -75,11 +67,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Footer footer)
-#else
         private static void Print(StringBuilder builder, Footer? footer)
-#endif
         {
             builder.AppendLine("  Footer Information:");
             builder.AppendLine("  -------------------------");

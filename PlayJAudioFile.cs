@@ -25,11 +25,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, AudioHeader header)
-#else
         private static void Print(StringBuilder builder, AudioHeader? header)
-#endif
         {
             builder.AppendLine("  Audio Header Information:");
             builder.AppendLine("  -------------------------");
@@ -103,11 +99,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, UnknownBlock1 block)
-#else
         private static void Print(StringBuilder builder, UnknownBlock1? block)
-#endif
         {
             builder.AppendLine("  Unknown Block 1 Information:");
             builder.AppendLine("  -------------------------");
@@ -123,32 +115,22 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, uint value)
-#else
         private static void Print(StringBuilder builder, uint? value)
-#endif
         {
             builder.AppendLine("  Unknown Value 2 Information:");
             builder.AppendLine("  -------------------------");
-#if NET6_0_OR_GREATER
             if (value == null)
             {
                 builder.AppendLine("  No unknown block 1r");
                 builder.AppendLine();
                 return;
             }
-#endif
 
             builder.AppendLine(value, "  Value");
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, UnknownBlock3 block)
-#else
         private static void Print(StringBuilder builder, UnknownBlock3? block)
-#endif
         {
             builder.AppendLine("  Unknown Block 3 Information:");
             builder.AppendLine("  -------------------------");
@@ -163,11 +145,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, uint count, DataFile[] entries)
-#else
         private static void Print(StringBuilder builder, uint count, DataFile?[]? entries)
-#endif
         {
             builder.AppendLine("  Data Files Information:");
             builder.AppendLine("  -------------------------");

@@ -20,11 +20,7 @@ namespace SabreTools.Printing
             Print(builder, cart.RomFSHeaders);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NCSDHeader header)
-#else
         private static void Print(StringBuilder builder, NCSDHeader? header)
-#endif
         {
             builder.AppendLine("  NCSD Header Information:");
             builder.AppendLine("  -------------------------");
@@ -107,11 +103,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CardInfoHeader header)
-#else
         private static void Print(StringBuilder builder, CardInfoHeader? header)
-#endif
         {
             builder.AppendLine("  Card Info Header Information:");
             builder.AppendLine("  -------------------------");
@@ -136,11 +128,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DevelopmentCardInfoHeader header)
-#else
         private static void Print(StringBuilder builder, DevelopmentCardInfoHeader? header)
-#endif
         {
             builder.AppendLine("  Development Card Info Header Information:");
             builder.AppendLine("  -------------------------");
@@ -234,11 +222,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NCCHHeader[] entries)
-#else
         private static void Print(StringBuilder builder, NCCHHeader?[]? entries)
-#endif
         {
             builder.AppendLine("  NCCH Partition Header Information:");
             builder.AppendLine("  -------------------------");
@@ -318,11 +302,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NCCHExtendedHeader[] entries)
-#else
         private static void Print(StringBuilder builder, NCCHExtendedHeader?[]? entries)
-#endif
         {
             builder.AppendLine("  NCCH Extended Header Information:");
             builder.AppendLine("  -------------------------");
@@ -546,11 +526,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExeFSHeader[] entries)
-#else
         private static void Print(StringBuilder builder, ExeFSHeader?[]? entries)
-#endif
         {
             builder.AppendLine("  ExeFS Header Information:");
             builder.AppendLine("  -------------------------");
@@ -620,11 +596,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, RomFSHeader[] entries)
-#else
         private static void Print(StringBuilder builder, RomFSHeader?[]? entries)
-#endif
         {
             builder.AppendLine("  RomFS Header Information:");
             builder.AppendLine("  -------------------------");

@@ -19,11 +19,7 @@ namespace SabreTools.Printing
             Print(builder, file.Footer);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -46,11 +42,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryEntry[] entries, string prefix)
-#else
         private static void Print(StringBuilder builder, DirectoryEntry?[]? entries, string prefix)
-#endif
         {
             builder.AppendLine($"  {prefix} Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -78,11 +70,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryMapping[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryMapping?[]? entries)
-#endif
         {
             builder.AppendLine("  Preload Directory Mappings Information:");
             builder.AppendLine("  -------------------------");
@@ -108,11 +96,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryItem[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryItem?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Items Information:");
             builder.AppendLine("  -------------------------");
@@ -141,11 +125,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Footer footer)
-#else
         private static void Print(StringBuilder builder, Footer? footer)
-#endif
         {
             builder.AppendLine("  Footer Information:");
             builder.AppendLine("  -------------------------");

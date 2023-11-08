@@ -15,11 +15,7 @@ namespace SabreTools.Printing
             Print(builder, file.Header);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -38,11 +34,7 @@ namespace SabreTools.Printing
             Print(builder, header.Lumps);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Lump[] lumps)
-#else
         private static void Print(StringBuilder builder, Lump?[]? lumps)
-#endif
         {
             builder.AppendLine("  Lumps Information:");
             builder.AppendLine("  -------------------------");

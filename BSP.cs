@@ -18,11 +18,7 @@ namespace SabreTools.Printing
             Print(builder, file.Textures);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -37,11 +33,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Lump[] lumps)
-#else
         private static void Print(StringBuilder builder, Lump?[]? lumps)
-#endif
         {
             builder.AppendLine("  Lumps Information:");
             builder.AppendLine("  -------------------------");
@@ -79,11 +71,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, TextureHeader header)
-#else
         private static void Print(StringBuilder builder, TextureHeader? header)
-#endif
         {
             builder.AppendLine("  Texture Header Information:");
             builder.AppendLine("  -------------------------");
@@ -110,11 +98,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Texture[] textures)
-#else
         private static void Print(StringBuilder builder, Texture?[]? textures)
-#endif
         {
             builder.AppendLine("  Textures Information:");
             builder.AppendLine("  -------------------------");

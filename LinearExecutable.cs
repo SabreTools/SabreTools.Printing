@@ -36,11 +36,7 @@ namespace SabreTools.Printing
             Print(builder, executable.DebugInformation);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");
@@ -77,11 +73,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, InformationBlock block)
-#else
         private static void Print(StringBuilder builder, InformationBlock? block)
-#endif
         {
             builder.AppendLine("  Information Block Information:");
             builder.AppendLine("  -------------------------");
@@ -141,11 +133,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ObjectTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ObjectTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Object Table Information:");
             builder.AppendLine("  -------------------------");
@@ -176,11 +164,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ObjectPageMapEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ObjectPageMapEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Object Page Map Information:");
             builder.AppendLine("  -------------------------");
@@ -208,11 +192,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ResourceTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ResourceTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Resource Table Information:");
             builder.AppendLine("  -------------------------");
@@ -242,11 +222,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ResidentNamesTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ResidentNamesTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Resident Names Table Information:");
             builder.AppendLine("  -------------------------");
@@ -274,11 +250,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, EntryTableBundle[] bundles)
-#else
         private static void Print(StringBuilder builder, EntryTableBundle?[]? bundles)
-#endif
         {
             builder.AppendLine("  Entry Table Information:");
             builder.AppendLine("  -------------------------");
@@ -364,11 +336,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ModuleFormatDirectivesTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ModuleFormatDirectivesTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Module Format Directives Table Information:");
             builder.AppendLine("  -------------------------");
@@ -396,11 +364,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, VerifyRecordDirectiveTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, VerifyRecordDirectiveTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Verify Record Directive Table Information:");
             builder.AppendLine("  -------------------------");
@@ -432,11 +396,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FixupPageTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, FixupPageTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Fix-up Page Table Information:");
             builder.AppendLine("  -------------------------");
@@ -462,11 +422,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FixupRecordTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, FixupRecordTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Fix-up Record Table Information:");
             builder.AppendLine("  -------------------------");
@@ -614,11 +570,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ImportModuleNameTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ImportModuleNameTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Import Module Name Table Information:");
             builder.AppendLine("  -------------------------");
@@ -645,11 +597,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ImportModuleProcedureNameTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ImportModuleProcedureNameTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Import Module Procedure Name Table Information:");
             builder.AppendLine("  -------------------------");
@@ -676,11 +624,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, PerPageChecksumTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, PerPageChecksumTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Per-Page Checksum Table Information:");
             builder.AppendLine("  -------------------------");
@@ -706,11 +650,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NonResidentNamesTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, NonResidentNamesTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Non-Resident Names Table Information:");
             builder.AppendLine("  -------------------------");
@@ -738,11 +678,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DebugInformation di)
-#else
         private static void Print(StringBuilder builder, DebugInformation? di)
-#endif
         {
             builder.AppendLine("  Debug Information:");
             builder.AppendLine("  -------------------------");

@@ -39,11 +39,7 @@ namespace SabreTools.Printing
             Print(builder, executable.ResourceDirectoryTable);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");
@@ -80,11 +76,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, string signature, COFFFileHeader header)
-#else
         private static void Print(StringBuilder builder, string? signature, COFFFileHeader? header)
-#endif
         {
             builder.AppendLine("  COFF File Header Information:");
             builder.AppendLine("  -------------------------");
@@ -106,11 +98,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, OptionalHeader header, SectionHeader[] table)
-#else
         private static void Print(StringBuilder builder, OptionalHeader? header, SectionHeader?[]? table)
-#endif
         {
             builder.AppendLine("  Optional Header Information:");
             builder.AppendLine("  -------------------------");
@@ -282,11 +270,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SectionHeader[] table)
-#else
         private static void Print(StringBuilder builder, SectionHeader?[]? table)
-#endif
         {
             builder.AppendLine("  Section Table Information:");
             builder.AppendLine("  -------------------------");
@@ -297,11 +281,7 @@ namespace SabreTools.Printing
                 return;
             }
 
-#if NET48
-            for (int i = 0; i < table.Length; i++)
-#else
-                for (int i = 0; i < table!.Length; i++)
-#endif
+            for (int i = 0; i < table!.Length; i++)
             {
                 var entry = table[i];
                 builder.AppendLine($"  Section Table Entry {i}");
@@ -328,11 +308,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, COFFSymbolTableEntry[] symbolTable)
-#else
         private static void Print(StringBuilder builder, COFFSymbolTableEntry?[]? symbolTable)
-#endif
         {
             builder.AppendLine("  COFF Symbol Table Information:");
             builder.AppendLine("  -------------------------");
@@ -468,11 +444,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, COFFStringTable stringTable)
-#else
         private static void Print(StringBuilder builder, COFFStringTable? stringTable)
-#endif
         {
             builder.AppendLine("  COFF String Table Information:");
             builder.AppendLine("  -------------------------");
@@ -486,22 +458,14 @@ namespace SabreTools.Printing
             builder.AppendLine(stringTable.TotalSize, "  Total size");
             for (int i = 0; i < stringTable.Strings.Length; i++)
             {
-#if NET48
-                string entry = stringTable.Strings[i];
-#else
                 string? entry = stringTable.Strings[i];
-#endif
                 builder.AppendLine($"  COFF String Table Entry {i})");
                 builder.AppendLine(entry, "    Value");
             }
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, AttributeCertificateTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, AttributeCertificateTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Attribute Certificate Table Information:");
             builder.AppendLine("  -------------------------");
@@ -570,11 +534,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DelayLoadDirectoryTable table)
-#else
         private static void Print(StringBuilder builder, DelayLoadDirectoryTable? table)
-#endif
         {
             builder.AppendLine("  Delay-Load Directory Table Information:");
             builder.AppendLine("  -------------------------");
@@ -596,11 +556,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, BaseRelocationBlock[] entries, SectionHeader[] table)
-#else
         private static void Print(StringBuilder builder, BaseRelocationBlock?[]? entries, SectionHeader?[]? table)
-#endif
         {
             builder.AppendLine("  Base Relocation Table Information:");
             builder.AppendLine("  -------------------------");
@@ -637,13 +593,12 @@ namespace SabreTools.Printing
                 {
                     var typeOffsetFieldEntry = baseRelocationTableEntry.TypeOffsetFieldEntries[j];
                     builder.AppendLine($"    Type and Offset Entry {j}");
-#if NET6_0_OR_GREATER
-                            if (typeOffsetFieldEntry == null)
-                            {
-                                builder.AppendLine("      [NULL]");
-                                continue;
-                            }
-#endif
+                    if (typeOffsetFieldEntry == null)
+                    {
+                        builder.AppendLine("      [NULL]");
+                        continue;
+                    }
+
                     builder.AppendLine($"      Type: {typeOffsetFieldEntry.BaseRelocationType} (0x{typeOffsetFieldEntry.BaseRelocationType:X})");
                     builder.AppendLine(typeOffsetFieldEntry.Offset, "      Offset");
                 }
@@ -651,11 +606,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DebugTable table)
-#else
         private static void Print(StringBuilder builder, DebugTable? table)
-#endif
         {
             builder.AppendLine("  Debug Table Information:");
             builder.AppendLine("  -------------------------");
@@ -689,11 +640,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExportTable table)
-#else
         private static void Print(StringBuilder builder, ExportTable? table)
-#endif
         {
             builder.AppendLine("  Export Table Information:");
             builder.AppendLine("  -------------------------");
@@ -802,11 +749,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ImportTable table, SectionHeader[] sectionTable)
-#else
         private static void Print(StringBuilder builder, ImportTable? table, SectionHeader?[]? sectionTable)
-#endif
         {
             builder.AppendLine("  Import Table Information:");
             builder.AppendLine("  -------------------------");
@@ -967,11 +910,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ResourceDirectoryTable table)
-#else
         private static void Print(StringBuilder builder, ResourceDirectoryTable? table)
-#endif
         {
             builder.AppendLine("  Resource Directory Table Information:");
             builder.AppendLine("  -------------------------");
@@ -1165,11 +1104,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            MenuResource menu = null;
-#else
             MenuResource? menu = null;
-#endif
             try { menu = entry.AsMenu(); } catch { }
             if (menu == null)
             {
@@ -1259,11 +1194,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            DialogBoxResource dialogBox = null;
-#else
             DialogBoxResource? dialogBox = null;
-#endif
             try { dialogBox = entry.AsDialogBox(); } catch { }
             if (dialogBox == null)
             {
@@ -1398,11 +1329,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            Dictionary<int, string> stringTable = null;
-#else
             Dictionary<int, string?>? stringTable = null;
-#endif
             try { stringTable = entry.AsStringTable(); } catch { }
             if (stringTable == null)
             {
@@ -1413,11 +1340,7 @@ namespace SabreTools.Printing
             foreach (var kvp in stringTable)
             {
                 int index = kvp.Key;
-#if NET48
-                string stringValue = kvp.Value;
-#else
                 string? stringValue = kvp.Value;
-#endif
                 builder.AppendLine(stringValue, $"{padding}String entry {index}");
             }
         }
@@ -1438,11 +1361,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            AcceleratorTableEntry[] acceleratorTable = null;
-#else
             AcceleratorTableEntry[]? acceleratorTable = null;
-#endif
             try { acceleratorTable = entry.AsAcceleratorTableResource(); } catch { }
             if (acceleratorTable == null)
             {
@@ -1474,11 +1393,7 @@ namespace SabreTools.Printing
             else
             {
                 int offset = 0;
-#if NET48
-                byte[] magic = entry.Data.ReadBytes(ref offset, Math.Min(entry.Data.Length, 16));
-#else
                 byte[]? magic = entry.Data.ReadBytes(ref offset, Math.Min(entry.Data.Length, 16));
-#endif
 
                 if (magic == null)
                 {
@@ -1512,11 +1427,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            MessageResourceData messageTable = null;
-#else
             MessageResourceData? messageTable = null;
-#endif
             try { messageTable = entry.AsMessageResourceData(); } catch { }
             if (messageTable == null)
             {
@@ -1595,11 +1506,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            VersionInfo versionInfo = null;
-#else
             VersionInfo? versionInfo = null;
-#endif
             try { versionInfo = entry.AsVersionInfo(); } catch { }
             if (versionInfo == null)
             {
@@ -1763,11 +1670,7 @@ namespace SabreTools.Printing
         {
             string padding = new string(' ', (level + 1) * 2);
 
-#if NET48
-            AssemblyManifest assemblyManifest = null;
-#else
             AssemblyManifest? assemblyManifest = null;
-#endif
             try { assemblyManifest = entry.AsAssemblyManifest(); } catch { }
             if (assemblyManifest == null)
             {
@@ -2001,12 +1904,8 @@ namespace SabreTools.Printing
             else
             {
                 int offset = 0;
-#if NET48
-                byte[] magic = entry.Data.ReadBytes(ref offset, Math.Min(entry.Data.Length, 16));
-#else
-                byte[]? magic = entry.Data.ReadBytes(ref offset, Math.Min(entry.Data.Length, 16));
-#endif
 
+                byte[]? magic = entry.Data.ReadBytes(ref offset, Math.Min(entry.Data.Length, 16));
                 if (magic == null)
                 {
                     // No-op

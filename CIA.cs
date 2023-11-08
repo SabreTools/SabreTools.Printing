@@ -19,11 +19,7 @@ namespace SabreTools.Printing
             Print(builder, cia.MetaData);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CIAHeader header)
-#else
         private static void Print(StringBuilder builder, CIAHeader? header)
-#endif
         {
             builder.AppendLine("  CIA Header Information:");
             builder.AppendLine("  -------------------------");
@@ -46,11 +42,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Certificate[] certificateChain)
-#else
         private static void Print(StringBuilder builder, Certificate?[]? certificateChain)
-#endif
         {
             builder.AppendLine("  Certificate Chain Information:");
             builder.AppendLine("  -------------------------");
@@ -106,11 +98,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Ticket ticket)
-#else
         private static void Print(StringBuilder builder, Ticket? ticket)
-#endif
         {
             builder.AppendLine("  Ticket Information:");
             builder.AppendLine("  -------------------------");
@@ -215,11 +203,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, TitleMetadata tmd)
-#else
         private static void Print(StringBuilder builder, TitleMetadata? tmd)
-#endif
         {
             builder.AppendLine("  Title Metadata Information:");
             builder.AppendLine("  -------------------------");
@@ -362,11 +346,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NCCHHeader[] partitions)
-#else
         private static void Print(StringBuilder builder, NCCHHeader?[]? partitions)
-#endif
         {
             builder.AppendLine("  NCCH Partition Header Information:");
             builder.AppendLine("  -------------------------");
@@ -446,11 +426,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, MetaData metaData)
-#else
         private static void Print(StringBuilder builder, MetaData? metaData)
-#endif
         {
             builder.AppendLine("  Meta Data Information:");
             builder.AppendLine("  -------------------------");

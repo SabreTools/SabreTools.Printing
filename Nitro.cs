@@ -18,11 +18,7 @@ namespace SabreTools.Printing
             Print(builder, cart.FileAllocationTable);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CommonHeader header)
-#else
         private static void Print(StringBuilder builder, CommonHeader? header)
-#endif
         {
             builder.AppendLine("  Common Header Information:");
             builder.AppendLine("  -------------------------");
@@ -76,11 +72,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExtendedDSiHeader header)
-#else
         private static void Print(StringBuilder builder, ExtendedDSiHeader? header)
-#endif
         {
             builder.AppendLine("  Extended DSi Header Information:");
             builder.AppendLine("  -------------------------");
@@ -142,11 +134,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, byte[] secureArea)
-#else
         private static void Print(StringBuilder builder, byte[]? secureArea)
-#endif
         {
             builder.AppendLine("  Secure Area Information:");
             builder.AppendLine("  -------------------------");
@@ -154,11 +142,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NameTable table)
-#else
         private static void Print(StringBuilder builder, NameTable? table)
-#endif
         {
             builder.AppendLine("  Name Table Information:");
             builder.AppendLine("  -------------------------");
@@ -174,11 +158,7 @@ namespace SabreTools.Printing
             Print(builder, table.NameList);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FolderAllocationTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, FolderAllocationTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Folder Allocation Table:");
             builder.AppendLine("  -------------------------");
@@ -215,11 +195,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NameListEntry[] entries)
-#else
         private static void Print(StringBuilder builder, NameListEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Name List:");
             builder.AppendLine("  -------------------------");
@@ -248,11 +224,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FileAllocationTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, FileAllocationTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  File Allocation Table:");
             builder.AppendLine("  -------------------------");

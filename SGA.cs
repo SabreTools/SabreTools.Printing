@@ -19,11 +19,7 @@ namespace SabreTools.Printing
             // TODO: Should we print the string table?
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -58,11 +54,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Directory directory)
-#else
         private static void Print(StringBuilder builder, Directory? directory)
-#endif
         {
             builder.AppendLine("  Directory Information:");
             builder.AppendLine("  -------------------------");
@@ -110,11 +102,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryHeader4 header)
-#else
         private static void Print(StringBuilder builder, DirectoryHeader4? header)
-#endif
         {
             builder.AppendLine("  Directory Header Information:");
             builder.AppendLine("  -------------------------");
@@ -136,11 +124,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryHeader5 header)
-#else
         private static void Print(StringBuilder builder, DirectoryHeader5? header)
-#endif
         {
             builder.AppendLine("  Directory Header Information:");
             builder.AppendLine("  -------------------------");
@@ -162,11 +146,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryHeader7 header)
-#else
         private static void Print(StringBuilder builder, DirectoryHeader7? header)
-#endif
         {
             builder.AppendLine("  Directory Header Information:");
             builder.AppendLine("  -------------------------");
@@ -190,11 +170,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Section4[] sections)
-#else
         private static void Print(StringBuilder builder, Section4?[]? sections)
-#endif
         {
             builder.AppendLine("  Sections Information:");
             builder.AppendLine("  -------------------------");
@@ -226,11 +202,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Section5[] sections)
-#else
         private static void Print(StringBuilder builder, Section5?[]? sections)
-#endif
         {
             builder.AppendLine("  Sections Information:");
             builder.AppendLine("  -------------------------");
@@ -262,11 +234,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Folder4[] folders)
-#else
         private static void Print(StringBuilder builder, Folder4?[]? folders)
-#endif
         {
             builder.AppendLine("  Folders Information:");
             builder.AppendLine("  -------------------------");
@@ -297,11 +265,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Folder5[] folders)
-#else
         private static void Print(StringBuilder builder, Folder5?[]? folders)
-#endif
         {
             builder.AppendLine("  Folders Information:");
             builder.AppendLine("  -------------------------");
@@ -332,11 +296,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, File4[] files)
-#else
         private static void Print(StringBuilder builder, File4?[]? files)
-#endif
         {
             builder.AppendLine("  Files Information:");
             builder.AppendLine("  -------------------------");
@@ -369,11 +329,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, File6[] files)
-#else
         private static void Print(StringBuilder builder, File6?[]? files)
-#endif
         {
             builder.AppendLine("  Files Information:");
             builder.AppendLine("  -------------------------");
@@ -407,11 +363,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, File7[] files)
-#else
         private static void Print(StringBuilder builder, File7?[]? files)
-#endif
         {
             builder.AppendLine("  Files Information:");
             builder.AppendLine("  -------------------------");

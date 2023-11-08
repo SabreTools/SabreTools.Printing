@@ -35,17 +35,9 @@ namespace SabreTools.Printing
             Print(builder, cabinet.Components);
         }
 
-#if NET48
-        private static int GetMajorVersion(CommonHeader header)
-#else
         private static int GetMajorVersion(CommonHeader? header)
-#endif
         {
-#if NET48
-            uint majorVersion = header.Version;
-#else
             uint majorVersion = header?.Version ?? 0;
-#endif
             if (majorVersion >> 24 == 1)
             {
                 majorVersion = (majorVersion >> 12) & 0x0F;
@@ -60,11 +52,7 @@ namespace SabreTools.Printing
             return (int)majorVersion;
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CommonHeader header, int majorVersion)
-#else
         private static void Print(StringBuilder builder, CommonHeader? header, int majorVersion)
-#endif
         {
             builder.AppendLine("  Common Header Information:");
             builder.AppendLine("  -------------------------");
@@ -83,11 +71,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, VolumeHeader header, int majorVersion)
-#else
         private static void Print(StringBuilder builder, VolumeHeader? header, int majorVersion)
-#endif
         {
             builder.AppendLine("  Volume Header Information:");
             builder.AppendLine("  -------------------------");
@@ -132,11 +116,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Descriptor descriptor)
-#else
         private static void Print(StringBuilder builder, Descriptor? descriptor)
-#endif
         {
             builder.AppendLine("  Descriptor Information:");
             builder.AppendLine("  -------------------------");
@@ -203,11 +183,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, uint[] entries)
-#else
         private static void Print(StringBuilder builder, uint[]? entries)
-#endif
         {
             builder.AppendLine("  File Descriptor Offsets:");
             builder.AppendLine("  -------------------------");
@@ -225,11 +201,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, string[] entries)
-#else
         private static void Print(StringBuilder builder, string?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Names:");
             builder.AppendLine("  -------------------------");
@@ -247,11 +219,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FileDescriptor[] entries)
-#else
         private static void Print(StringBuilder builder, FileDescriptor?[]? entries)
-#endif
         {
             builder.AppendLine("  File Descriptors:");
             builder.AppendLine("  -------------------------");
@@ -288,11 +256,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Dictionary<long, OffsetList> entries, string name)
-#else
         private static void Print(StringBuilder builder, Dictionary<long, OffsetList?>? entries, string name)
-#endif
         {
             builder.AppendLine($"  {name} Offsets:");
             builder.AppendLine("  -------------------------");
@@ -323,11 +287,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FileGroup[] entries)
-#else
         private static void Print(StringBuilder builder, FileGroup?[]? entries)
-#endif
         {
             builder.AppendLine("  File Groups:");
             builder.AppendLine("  -------------------------");
@@ -376,11 +336,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Component[] entries)
-#else
         private static void Print(StringBuilder builder, Component?[]? entries)
-#endif
         {
             builder.AppendLine("  Components:");
             builder.AppendLine("  -------------------------");

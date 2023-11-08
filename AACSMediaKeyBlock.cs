@@ -14,11 +14,7 @@ namespace SabreTools.Printing
             Print(builder, mediaKeyBlock.Records);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Record[] records)
-#else
         private static void Print(StringBuilder builder, Record?[]? records)
-#endif
         {
             builder.AppendLine("  Records Information:");
             builder.AppendLine("  -------------------------");
@@ -37,11 +33,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Record record, int index)
-#else
         private static void Print(StringBuilder builder, Record? record, int index)
-#endif
         {
             builder.AppendLine($"  Record Entry {index}");
             if (record == null)
@@ -85,11 +77,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
         private static void Print(StringBuilder builder, EndOfMediaKeyBlockRecord record)
-#else
-        private static void Print(StringBuilder builder, EndOfMediaKeyBlockRecord record)
-#endif
         {
             if (record == null)
                 return;
@@ -97,11 +85,7 @@ namespace SabreTools.Printing
             builder.AppendLine(record.SignatureData, "    Signature data");
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExplicitSubsetDifferenceRecord record)
-#else
         private static void Print(StringBuilder builder, ExplicitSubsetDifferenceRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -130,11 +114,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, MediaKeyDataRecord record)
-#else
         private static void Print(StringBuilder builder, MediaKeyDataRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -154,11 +134,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SubsetDifferenceIndexRecord record)
-#else
         private static void Print(StringBuilder builder, SubsetDifferenceIndexRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -179,11 +155,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, TypeAndVersionRecord record)
-#else
         private static void Print(StringBuilder builder, TypeAndVersionRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -192,11 +164,7 @@ namespace SabreTools.Printing
             builder.AppendLine(record.VersionNumber, "    Version number");
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DriveRevocationListRecord record)
-#else
         private static void Print(StringBuilder builder, DriveRevocationListRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -247,11 +215,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, HostRevocationListRecord record)
-#else
         private static void Print(StringBuilder builder, HostRevocationListRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -302,11 +266,7 @@ namespace SabreTools.Printing
             }
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, VerifyMediaKeyRecord record)
-#else
         private static void Print(StringBuilder builder, VerifyMediaKeyRecord? record)
-#endif
         {
             if (record == null)
                 return;
@@ -314,11 +274,7 @@ namespace SabreTools.Printing
             builder.AppendLine(record.CiphertextValue, "    Ciphertext value");
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CopyrightRecord record)
-#else
         private static void Print(StringBuilder builder, CopyrightRecord? record)
-#endif
         {
             if (record == null)
                 return;

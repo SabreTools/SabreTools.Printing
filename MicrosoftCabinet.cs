@@ -17,11 +17,7 @@ namespace SabreTools.Printing
             Print(builder, cabinet.Files);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CFHEADER header)
-#else
         private static void Print(StringBuilder builder, CFHEADER? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -69,11 +65,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CFFOLDER[] entries)
-#else
         private static void Print(StringBuilder builder, CFFOLDER?[]? entries)
-#endif
         {
             builder.AppendLine("  Folders:");
             builder.AppendLine("  -------------------------");
@@ -129,11 +121,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, CFFILE[] entries)
-#else
         private static void Print(StringBuilder builder, CFFILE?[]? entries)
-#endif
         {
             builder.AppendLine("  Files:");
             builder.AppendLine("  -------------------------");

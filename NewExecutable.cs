@@ -29,11 +29,7 @@ namespace SabreTools.Printing
             Print(builder, executable.NonResidentNameTable);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");
@@ -70,11 +66,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -119,11 +111,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, SegmentTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, SegmentTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Segment Table Information:");
             builder.AppendLine("  -------------------------");
@@ -152,11 +140,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ResourceTable table)
-#else
         private static void Print(StringBuilder builder, ResourceTable? table)
-#endif
         {
             builder.AppendLine("  Resource Table Information:");
             builder.AppendLine("  -------------------------");
@@ -225,13 +209,12 @@ namespace SabreTools.Printing
                 foreach (var typeAndNameString in table.TypeAndNameStrings)
                 {
                     builder.AppendLine($"  Resource Type/Name Offset {typeAndNameString.Key}");
-#if NET6_0_OR_GREATER
                     if (typeAndNameString.Value == null)
                     {
                         builder.AppendLine("    [NULL]");
                         continue;
                     }
-#endif
+
                     builder.AppendLine(typeAndNameString.Value.Length, "    Length");
                     builder.AppendLine(typeAndNameString.Value.Text, "    Text", Encoding.ASCII);
                 }
@@ -239,11 +222,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ResidentNameTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ResidentNameTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Resident-Name Table Information:");
             builder.AppendLine("  -------------------------");
@@ -271,11 +250,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ModuleReferenceTableEntry[] entries, SabreTools.Models.MSDOS.ExecutableHeader stub, ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, ModuleReferenceTableEntry?[]? entries, SabreTools.Models.MSDOS.ExecutableHeader? stub, ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  Module-Reference Table Information:");
             builder.AppendLine("  -------------------------");
@@ -297,20 +272,12 @@ namespace SabreTools.Printing
                     continue;
                 }
 
-#if NET48
-                builder.AppendLine($"    Offset: {entry.Offset} (adjusted to be {entry.Offset + stub.NewExeHeaderAddr + header.ImportedNamesTableOffset})");
-#else
                 builder.AppendLine($"    Offset: {entry.Offset} (adjusted to be {entry.Offset + (stub?.NewExeHeaderAddr ?? 0) + (header?.ImportedNamesTableOffset ?? 0)})");
-#endif
             }
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Dictionary<ushort, ImportedNameTableEntry> entries)
-#else
         private static void Print(StringBuilder builder, Dictionary<ushort, ImportedNameTableEntry?>? entries)
-#endif
         {
             builder.AppendLine("  Imported-Name Table Information:");
             builder.AppendLine("  -------------------------");
@@ -324,24 +291,19 @@ namespace SabreTools.Printing
             foreach (var entry in entries)
             {
                 builder.AppendLine($"  Imported-Name Table at Offset {entry.Key}");
-#if NET6_0_OR_GREATER
-                    if (entry.Value == null)
-                    {
-                        builder.AppendLine("    [NULL]");
-                        continue;
-                    }
-#endif
+                if (entry.Value == null)
+                {
+                    builder.AppendLine("    [NULL]");
+                    continue;
+                }
+
                 builder.AppendLine(entry.Value.Length, "    Length");
                 builder.AppendLine(entry.Value.NameString, "    Name string", Encoding.ASCII);
             }
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, EntryTableBundle[] entries)
-#else
         private static void Print(StringBuilder builder, EntryTableBundle?[]? entries)
-#endif
         {
             builder.AppendLine("  Entry Table Information:");
             builder.AppendLine("  -------------------------");
@@ -381,11 +343,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, NonResidentNameTableEntry[] entries)
-#else
         private static void Print(StringBuilder builder, NonResidentNameTableEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Nonresident-Name Table Information:");
             builder.AppendLine("  -------------------------");

@@ -15,11 +15,7 @@ namespace SabreTools.Printing
             Print(builder, executable.RelocationTable);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ExecutableHeader header)
-#else
         private static void Print(StringBuilder builder, ExecutableHeader? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -47,11 +43,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, RelocationEntry[] entries)
-#else
         private static void Print(StringBuilder builder, RelocationEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Relocation Table Information:");
             builder.AppendLine("  -------------------------");

@@ -16,11 +16,7 @@ namespace SabreTools.Printing
             Print(builder, file.LumpInfos);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -37,11 +33,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Lump[] entries)
-#else
         private static void Print(StringBuilder builder, Lump?[]? entries)
-#endif
         {
             builder.AppendLine("  Lumps Information:");
             builder.AppendLine("  -------------------------");
@@ -74,11 +66,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, LumpInfo[] entries)
-#else
         private static void Print(StringBuilder builder, LumpInfo?[]? entries)
-#endif
         {
             builder.AppendLine("  Lump Infos Information:");
             builder.AppendLine("  -------------------------");

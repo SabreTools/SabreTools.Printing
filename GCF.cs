@@ -47,11 +47,7 @@ namespace SabreTools.Printing
             Print(builder, file.DataBlockHeader);
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -76,11 +72,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, BlockEntryHeader header)
-#else
         private static void Print(StringBuilder builder, BlockEntryHeader? header)
-#endif
         {
             builder.AppendLine("  Block Entry Header Information:");
             builder.AppendLine("  -------------------------");
@@ -102,11 +94,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, BlockEntry[] entries)
-#else
         private static void Print(StringBuilder builder, BlockEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Block Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -138,11 +126,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FragmentationMapHeader header)
-#else
         private static void Print(StringBuilder builder, FragmentationMapHeader? header)
-#endif
         {
             builder.AppendLine("  Fragmentation Map Header Information:");
             builder.AppendLine("  -------------------------");
@@ -160,11 +144,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FragmentationMap[] entries)
-#else
         private static void Print(StringBuilder builder, FragmentationMap?[]? entries)
-#endif
         {
             builder.AppendLine("  Fragmentation Maps Information:");
             builder.AppendLine("  -------------------------");
@@ -190,11 +170,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, BlockEntryMapHeader header)
-#else
         private static void Print(StringBuilder builder, BlockEntryMapHeader? header)
-#endif
         {
             builder.AppendLine("  Block Entry Map Header Information:");
             builder.AppendLine("  -------------------------");
@@ -213,11 +189,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, BlockEntryMap[] entries)
-#else
         private static void Print(StringBuilder builder, BlockEntryMap?[]? entries)
-#endif
         {
             builder.AppendLine("  Block Entry Maps Information:");
             builder.AppendLine("  -------------------------");
@@ -244,11 +216,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryHeader header)
-#else
         private static void Print(StringBuilder builder, DirectoryHeader? header)
-#endif
         {
             builder.AppendLine("  Directory Header Information:");
             builder.AppendLine("  -------------------------");
@@ -276,11 +244,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryEntry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -313,11 +277,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryInfo1Entry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryInfo1Entry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Info 1 Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -343,11 +303,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryInfo2Entry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryInfo2Entry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Info 2 Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -373,11 +329,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryCopyEntry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryCopyEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Copy Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -403,11 +355,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryLocalEntry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryLocalEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Local Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -433,11 +381,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryMapHeader header)
-#else
         private static void Print(StringBuilder builder, DirectoryMapHeader? header)
-#endif
         {
             builder.AppendLine("  Directory Map Header Information:");
             builder.AppendLine("  -------------------------");
@@ -453,11 +397,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DirectoryMapEntry[] entries)
-#else
         private static void Print(StringBuilder builder, DirectoryMapEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Directory Map Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -483,11 +423,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ChecksumHeader header)
-#else
         private static void Print(StringBuilder builder, ChecksumHeader? header)
-#endif
         {
             builder.AppendLine("  Checksum Header Information:");
             builder.AppendLine("  -------------------------");
@@ -503,11 +439,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ChecksumMapHeader header)
-#else
         private static void Print(StringBuilder builder, ChecksumMapHeader? header)
-#endif
         {
             builder.AppendLine("  Checksum Map Header Information:");
             builder.AppendLine("  -------------------------");
@@ -525,11 +457,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ChecksumMapEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ChecksumMapEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Checksum Map Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -556,11 +484,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, ChecksumEntry[] entries)
-#else
         private static void Print(StringBuilder builder, ChecksumEntry?[]? entries)
-#endif
         {
             builder.AppendLine("  Checksum Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -586,11 +510,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, DataBlockHeader header)
-#else
         private static void Print(StringBuilder builder, DataBlockHeader? header)
-#endif
         {
             builder.AppendLine("  Data Block Header Information:");
             builder.AppendLine("  -------------------------");

@@ -17,11 +17,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, Header header)
-#else
         private static void Print(StringBuilder builder, Header? header)
-#endif
         {
             builder.AppendLine("  Header Information:");
             builder.AppendLine("  -------------------------");
@@ -41,11 +37,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-#if NET48
-        private static void Print(StringBuilder builder, FileDescriptor[] entries)
-#else
         private static void Print(StringBuilder builder, FileDescriptor?[]? entries)
-#endif
         {
             builder.AppendLine("  File List Information:");
             builder.AppendLine("  -------------------------");
