@@ -10,8 +10,8 @@ namespace SabreTools.Printing
             builder.AppendLine("Xbox Media Identifier Information:");
             builder.AppendLine("-------------------------");
             builder.AppendLine(xmid.PublisherIdentifier, "Publisher identifier");
-            if (!string.IsNullOrWhiteSpace(xmid.PublisherIdentifier) && Publishers.ContainsKey(xmid.PublisherIdentifier))
-                builder.AppendLine(Publishers[xmid.PublisherIdentifier], "Publisher");
+            if (!string.IsNullOrWhiteSpace(xmid.PublisherIdentifier) && Publishers.ContainsKey(xmid.PublisherIdentifier ?? string.Empty))
+                builder.AppendLine(Publishers[xmid.PublisherIdentifier ?? string.Empty], "Publisher");
             builder.AppendLine(xmid.GameID, "Game ID");
             builder.AppendLine(xmid.VersionNumber, "Version number");
             builder.AppendLine(xmid.RegionIdentifier, "Region identifier");

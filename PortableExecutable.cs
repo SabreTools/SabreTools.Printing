@@ -159,49 +159,49 @@ namespace SabreTools.Printing
             {
                 builder.AppendLine("    Export Table (1)");
                 builder.AppendLine(header.ExportTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ExportTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ExportTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ExportTable.Size, "      Size");
             }
             if (header.ImportTable != null)
             {
                 builder.AppendLine("    Import Table (2)");
                 builder.AppendLine(header.ImportTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ImportTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ImportTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ImportTable.Size, "      Size");
             }
             if (header.ResourceTable != null)
             {
                 builder.AppendLine("    Resource Table (3)");
                 builder.AppendLine(header.ResourceTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ResourceTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ResourceTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ResourceTable.Size, "      Size");
             }
             if (header.ExceptionTable != null)
             {
                 builder.AppendLine("    Exception Table (4)");
                 builder.AppendLine(header.ExceptionTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ExceptionTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ExceptionTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ExceptionTable.Size, "      Size");
             }
             if (header.CertificateTable != null)
             {
                 builder.AppendLine("    Certificate Table (5)");
                 builder.AppendLine(header.CertificateTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.CertificateTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.CertificateTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.CertificateTable.Size, "      Size");
             }
             if (header.BaseRelocationTable != null)
             {
                 builder.AppendLine("    Base Relocation Table (6)");
                 builder.AppendLine(header.BaseRelocationTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.BaseRelocationTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.BaseRelocationTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.BaseRelocationTable.Size, "      Size");
             }
             if (header.Debug != null)
             {
                 builder.AppendLine("    Debug Table (7)");
                 builder.AppendLine(header.Debug.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.Debug.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.Debug.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.Debug.Size, "      Size");
             }
             if (header.NumberOfRvaAndSizes >= 8)
@@ -215,49 +215,49 @@ namespace SabreTools.Printing
             {
                 builder.AppendLine("    Global Pointer Register (9)");
                 builder.AppendLine(header.GlobalPtr.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.GlobalPtr.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.GlobalPtr.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.GlobalPtr.Size, "      Size");
             }
             if (header.ThreadLocalStorageTable != null)
             {
                 builder.AppendLine("    Thread Local Storage (TLS) Table (10)");
                 builder.AppendLine(header.ThreadLocalStorageTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ThreadLocalStorageTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ThreadLocalStorageTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ThreadLocalStorageTable.Size, "      Size");
             }
             if (header.LoadConfigTable != null)
             {
                 builder.AppendLine("    Load Config Table (11)");
                 builder.AppendLine(header.LoadConfigTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.LoadConfigTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.LoadConfigTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.LoadConfigTable.Size, "      Size");
             }
             if (header.BoundImport != null)
             {
                 builder.AppendLine("    Bound Import Table (12)");
                 builder.AppendLine(header.BoundImport.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.BoundImport.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.BoundImport.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.BoundImport.Size, "      Size");
             }
             if (header.ImportAddressTable != null)
             {
                 builder.AppendLine("    Import Address Table (13)");
                 builder.AppendLine(header.ImportAddressTable.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.ImportAddressTable.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.ImportAddressTable.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.ImportAddressTable.Size, "      Size");
             }
             if (header.DelayImportDescriptor != null)
             {
                 builder.AppendLine("    Delay Import Descriptior (14)");
                 builder.AppendLine(header.DelayImportDescriptor.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.DelayImportDescriptor.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.DelayImportDescriptor.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.DelayImportDescriptor.Size, "      Size");
             }
             if (header.CLRRuntimeHeader != null)
             {
                 builder.AppendLine("    CLR Runtime Header (15)");
                 builder.AppendLine(header.CLRRuntimeHeader.VirtualAddress, "      Virtual address");
-                builder.AppendLine(header.CLRRuntimeHeader.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "      Physical address");
+                builder.AppendLine(header.CLRRuntimeHeader.VirtualAddress.ConvertVirtualAddress(table), "      Physical address");
                 builder.AppendLine(header.CLRRuntimeHeader.Size, "      Size");
             }
             if (header.NumberOfRvaAndSizes >= 16)
@@ -294,7 +294,7 @@ namespace SabreTools.Printing
                 builder.AppendLine(entry.Name, "    Name", Encoding.ASCII);
                 builder.AppendLine(entry.VirtualSize, "    Virtual size");
                 builder.AppendLine(entry.VirtualAddress, "    Virtual address");
-                builder.AppendLine(entry.VirtualAddress.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "    Physical address");
+                builder.AppendLine(entry.VirtualAddress.ConvertVirtualAddress(table), "    Physical address");
                 builder.AppendLine(entry.SizeOfRawData, "    Size of raw data");
                 builder.AppendLine(entry.PointerToRawData, "    Pointer to raw data");
                 builder.AppendLine(entry.PointerToRelocations, "    Pointer to relocations");
@@ -578,7 +578,7 @@ namespace SabreTools.Printing
                 }
 
                 builder.AppendLine(baseRelocationTableEntry.PageRVA, "    Page RVA");
-                builder.AppendLine(baseRelocationTableEntry.PageRVA.ConvertVirtualAddress(table ?? Array.Empty<SectionHeader>()), "    Page physical address");
+                builder.AppendLine(baseRelocationTableEntry.PageRVA.ConvertVirtualAddress(table), "    Page physical address");
                 builder.AppendLine(baseRelocationTableEntry.BlockSize, "    Block size");
 
                 builder.AppendLine($"    Base Relocation Table {i} Type and Offset Information:");
@@ -780,13 +780,13 @@ namespace SabreTools.Printing
                     }
 
                     builder.AppendLine(importDirectoryTableEntry.ImportLookupTableRVA, "      Import lookup table RVA");
-                    builder.AppendLine(importDirectoryTableEntry.ImportLookupTableRVA.ConvertVirtualAddress(sectionTable ?? Array.Empty<SectionHeader>()), "      Import lookup table Physical Address");
+                    builder.AppendLine(importDirectoryTableEntry.ImportLookupTableRVA.ConvertVirtualAddress(sectionTable), "      Import lookup table Physical Address");
                     builder.AppendLine(importDirectoryTableEntry.TimeDateStamp, "      Time/Date stamp");
                     builder.AppendLine(importDirectoryTableEntry.ForwarderChain, "      Forwarder chain");
                     builder.AppendLine(importDirectoryTableEntry.NameRVA, "      Name RVA");
                     builder.AppendLine(importDirectoryTableEntry.Name, "      Name");
                     builder.AppendLine(importDirectoryTableEntry.ImportAddressTableRVA, "      Import address table RVA");
-                    builder.AppendLine(importDirectoryTableEntry.ImportAddressTableRVA.ConvertVirtualAddress(sectionTable ?? Array.Empty<SectionHeader>()), "      Import address table Physical Address");
+                    builder.AppendLine(importDirectoryTableEntry.ImportAddressTableRVA.ConvertVirtualAddress(sectionTable), "      Import address table Physical Address");
                 }
             }
             builder.AppendLine();
@@ -831,7 +831,7 @@ namespace SabreTools.Printing
                         else
                         {
                             builder.AppendLine(importLookupTableEntry.HintNameTableRVA, "        Hint/Name table RVA");
-                            builder.AppendLine(importLookupTableEntry.HintNameTableRVA.ConvertVirtualAddress(sectionTable ?? Array.Empty<SectionHeader>()), "        Hint/Name table Physical Address");
+                            builder.AppendLine(importLookupTableEntry.HintNameTableRVA.ConvertVirtualAddress(sectionTable), "        Hint/Name table Physical Address");
                         }
                     }
                 }
@@ -878,7 +878,7 @@ namespace SabreTools.Printing
                         else
                         {
                             builder.AppendLine(importAddressTableEntry.HintNameTableRVA, "        Hint/Name table RVA");
-                            builder.AppendLine(importAddressTableEntry.HintNameTableRVA.ConvertVirtualAddress(sectionTable ?? Array.Empty<SectionHeader>()), "        Hint/Name table Physical Address");
+                            builder.AppendLine(importAddressTableEntry.HintNameTableRVA.ConvertVirtualAddress(sectionTable), "        Hint/Name table Physical Address");
                         }
                     }
                 }

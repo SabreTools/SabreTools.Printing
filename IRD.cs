@@ -4,7 +4,7 @@ namespace SabreTools.Printing
 {
     public static class IRD
     {
-        public static void Print(StringBuilder builder, Models.IRD.IRD ird)
+        public static void Print(StringBuilder builder, Models.IRD.File ird)
         {
             builder.AppendLine("IRD Information:");
             builder.AppendLine("-------------------------");
