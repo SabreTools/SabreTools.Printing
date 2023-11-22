@@ -922,13 +922,13 @@ namespace SabreTools.Printing
                 return;
             }
 
-            Print(table, level: 0, types: new List<object>(), builder);
+            Print(table, level: 0, types: [], builder);
             builder.AppendLine();
         }
 
         private static void Print(ResourceDirectoryTable table, int level, List<object> types, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             builder.AppendLine(level, $"{padding}Table level");
             builder.AppendLine(table.Characteristics, $"{padding}Characteristics");
@@ -957,7 +957,7 @@ namespace SabreTools.Printing
                     if (entry == null)
                         continue;
 
-                    var newTypes = new List<object>(types ?? new List<object>());
+                    var newTypes = new List<object>(types ?? []);
                     if (entry.Name?.UnicodeString != null)
                         newTypes.Add(Encoding.UTF8.GetString(entry.Name.UnicodeString));
                     else
@@ -970,7 +970,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceDirectoryEntry(ResourceDirectoryEntry entry, int level, List<object> types, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             builder.AppendLine(level, $"{padding}Item level");
             if (entry.NameOffset != default)
@@ -991,7 +991,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceDataEntry(ResourceDataEntry entry, int level, List<object> types, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             // TODO: Use ordered list of base types to determine the shape of the data
             builder.AppendLine($"{padding}Base types: {string.Join(", ", types.Select(t => t.ToString()).ToArray())}");
@@ -1085,25 +1085,25 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_CURSOR(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Hardware-dependent cursor resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_BITMAP(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Bitmap resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_ICON(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Hardware-dependent icon resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_MENU(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             MenuResource? menu = null;
             try { menu = entry.AsMenu(); } catch { }
@@ -1193,7 +1193,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_DIALOG(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             DialogBoxResource? dialogBox = null;
             try { dialogBox = entry.AsDialogBox(); } catch { }
@@ -1328,7 +1328,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_STRING(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             Dictionary<int, string?>? stringTable = null;
             try { stringTable = entry.AsStringTable(); } catch { }
@@ -1348,19 +1348,19 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_FONTDIR(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Font directory resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_FONT(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Font resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_ACCELERATOR(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             AcceleratorTableEntry[]? acceleratorTable = null;
             try { acceleratorTable = entry.AsAcceleratorTableResource(); } catch { }
@@ -1383,7 +1383,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_RCDATA(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Application-defined resource found, not parsed yet");
 
             // Then print the data, if needed
@@ -1426,7 +1426,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_MESSAGETABLE(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             MessageResourceData? messageTable = null;
             try { messageTable = entry.AsMessageResourceData(); } catch { }
@@ -1493,19 +1493,19 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_GROUP_CURSOR(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Hardware-independent cursor resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_GROUP_ICON(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Hardware-independent icon resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_VERSION(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             VersionInfo? versionInfo = null;
             try { versionInfo = entry.AsVersionInfo(); } catch { }
@@ -1626,37 +1626,37 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_DLGINCLUDE(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}External header resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_PLUGPLAY(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Plug and Play resource found, not parsed yet");
         }
 
         private static void PrintResourceRT_VXD(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}VXD found, not parsed yet");
         }
 
         private static void PrintResourceRT_ANICURSOR(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Animated cursor found, not parsed yet");
         }
 
         private static void PrintResourceRT_ANIICON(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}Animated icon found, not parsed yet");
         }
 
         private static void PrintResourceRT_HTML(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
             builder.AppendLine($"{padding}HTML resource found, not parsed yet");
 
             //if (entry.Data != null)
@@ -1669,7 +1669,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceRT_MANIFEST(ResourceDataEntry entry, int level, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             AssemblyManifest? assemblyManifest = null;
             try { assemblyManifest = entry.AsAssemblyManifest(); } catch { }
@@ -1887,7 +1887,7 @@ namespace SabreTools.Printing
 
         private static void PrintResourceUNKNOWN(ResourceDataEntry entry, int level, object resourceType, StringBuilder builder)
         {
-            string padding = new string(' ', (level + 1) * 2);
+            string padding = new(' ', (level + 1) * 2);
 
             // Print the type first
             if (resourceType is uint numericType)
