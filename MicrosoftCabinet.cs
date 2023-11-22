@@ -42,7 +42,11 @@ namespace SabreTools.Printing
             builder.AppendLine(header.SetID, "  Set ID");
             builder.AppendLine(header.CabinetIndex, "  Cabinet index");
 
+#if NET20 || NET35
+            if ((header.Flags & HeaderFlags.RESERVE_PRESENT) != 0)
+#else
             if (header.Flags.HasFlag(HeaderFlags.RESERVE_PRESENT))
+#endif
             {
                 builder.AppendLine(header.HeaderReservedSize, "  Header reserved size");
                 builder.AppendLine(header.FolderReservedSize, "  Folder reserved size");
@@ -50,13 +54,21 @@ namespace SabreTools.Printing
                 builder.AppendLine(header.ReservedData, "  Reserved data");
             }
 
+#if NET20 || NET35
+            if ((header.Flags & HeaderFlags.PREV_CABINET) != 0)
+#else
             if (header.Flags.HasFlag(HeaderFlags.PREV_CABINET))
+#endif
             {
                 builder.AppendLine(header.CabinetPrev, "  Previous cabinet");
                 builder.AppendLine(header.DiskPrev, "  Previous disk");
             }
 
+#if NET20 || NET35
+            if ((header.Flags & HeaderFlags.NEXT_CABINET) != 0)
+#else
             if (header.Flags.HasFlag(HeaderFlags.NEXT_CABINET))
+#endif
             {
                 builder.AppendLine(header.CabinetNext, "  Next cabinet");
                 builder.AppendLine(header.DiskNext, "  Next disk");

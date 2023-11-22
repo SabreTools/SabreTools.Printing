@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Text;
 
 namespace SabreTools.Printing
@@ -12,7 +13,7 @@ namespace SabreTools.Printing
         public static StringBuilder AppendLine(this StringBuilder sb, bool? value, string prefixString)
         {
             value ??= false;
-            return sb.AppendLine($"{prefixString}: {value.ToString()}");
+            return sb.AppendLine($"{prefixString}: {value}");
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, char[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(c => c.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -156,7 +157,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, short[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(s => s.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -165,7 +166,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, ushort[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(u => u.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -174,7 +175,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, int[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(i => i.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -183,7 +184,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, uint[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(u => u.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -192,7 +193,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, long[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(l => l.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
 
@@ -201,7 +202,7 @@ namespace SabreTools.Printing
         /// </summary>
         public static StringBuilder AppendLine(this StringBuilder sb, ulong[]? value, string prefixString)
         {
-            string valueString = (value == null ? "[NULL]" : string.Join(", ", value));
+            string valueString = (value == null ? "[NULL]" : string.Join(", ", value.Select(u => u.ToString()).ToArray()));
             return sb.AppendLine($"{prefixString}: {valueString}");
         }
     }

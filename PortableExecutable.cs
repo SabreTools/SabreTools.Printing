@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Xml;
 using SabreTools.ASN1;
@@ -993,7 +994,7 @@ namespace SabreTools.Printing
             string padding = new string(' ', (level + 1) * 2);
 
             // TODO: Use ordered list of base types to determine the shape of the data
-            builder.AppendLine($"{padding}Base types: {string.Join(", ", types)}");
+            builder.AppendLine($"{padding}Base types: {string.Join(", ", types.Select(t => t.ToString()).ToArray())}");
 
             builder.AppendLine(level, $"{padding}Entry level");
             builder.AppendLine(entry.DataRVA, $"{padding}Data RVA");

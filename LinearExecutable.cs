@@ -1,5 +1,6 @@
 using System.Text;
 using SabreTools.Models.LinearExecutable;
+using SabreTools.Models.MicrosoftCabinet;
 
 namespace SabreTools.Printing
 {
@@ -447,25 +448,45 @@ namespace SabreTools.Printing
                 builder.AppendLine($"    Target flags: {entry.TargetFlags} (0x{entry.TargetFlags:X})");
 
                 // Source list flag
+#if NET20 || NET35
+                if ((entry.SourceType & FixupRecordSourceType.SourceListFlag) != 0)
+#else
                 if (entry.SourceType.HasFlag(FixupRecordSourceType.SourceListFlag))
+#endif
                     builder.AppendLine(entry.SourceOffsetListCount, "    Source offset list count");
                 else
                     builder.AppendLine(entry.SourceOffset, "    Source offset");
 
                 // OBJECT / TRGOFF
+#if NET20 || NET35
+                if ((entry.TargetFlags & FixupRecordTargetFlags.InternalReference) != 0)
+#else
                 if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.InternalReference))
+#endif
                 {
                     // 16-bit Object Number/Module Ordinal Flag
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag) != 0)
+#else
                     if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#endif
                         builder.AppendLine(entry.TargetObjectNumberWORD, "    Target object number");
                     else
                         builder.AppendLine(entry.TargetObjectNumberByte, "    Target object number");
 
                     // 16-bit Selector fixup
+#if NET20 || NET35
+                    if ((entry.SourceType & FixupRecordSourceType.SixteenBitSelectorFixup) != 0)
+#else
                     if (!entry.SourceType.HasFlag(FixupRecordSourceType.SixteenBitSelectorFixup))
+#endif
                     {
                         // 32-bit Target Offset Flag
+#if NET20 || NET35
+                        if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag) != 0)
+#else
                         if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag))
+#endif
                             builder.AppendLine(entry.TargetOffsetDWORD, "    Target offset");
                         else
                             builder.AppendLine(entry.TargetOffsetWORD, "    Target offset");
@@ -473,27 +494,51 @@ namespace SabreTools.Printing
                 }
 
                 // MOD ORD# / IMPORT ORD / ADDITIVE
+#if NET20 || NET35
+                else if ((entry.TargetFlags & FixupRecordTargetFlags.ImportedReferenceByOrdinal) != 0)
+#else
                 else if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ImportedReferenceByOrdinal))
+#endif
                 {
                     // 16-bit Object Number/Module Ordinal Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#endif
                         builder.AppendLine(entry.OrdinalIndexImportModuleNameTableWORD, "    Ordinal index import module name table");
                     else
                         builder.AppendLine(entry.OrdinalIndexImportModuleNameTableByte, "    Ordinal index import module name table");
 
                     // 8-bit Ordinal Flag & 32-bit Target Offset Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.EightBitOrdinalFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.EightBitOrdinalFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.EightBitOrdinalFlag))
+#endif
                         builder.AppendLine(entry.ImportedOrdinalNumberByte, "    Imported ordinal number");
-                    else if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag))
+#if NET20 || NET35
+                    else if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag) != 0)
+#else
+                    else if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag))
+#endif
                         builder.AppendLine(entry.ImportedOrdinalNumberDWORD, "    Imported ordinal number");
                     else
                         builder.AppendLine(entry.ImportedOrdinalNumberWORD, "    Imported ordinal number");
 
                     // Additive Fixup Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.AdditiveFixupFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#endif
                     {
                         // 32-bit Additive Flag
-                        if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#if NET20 || NET35
+                        if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag) != 0)
+#else
+                        if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#endif
                             builder.AppendLine(entry.AdditiveFixupValueDWORD, "    Additive fixup value");
                         else
                             builder.AppendLine(entry.AdditiveFixupValueWORD, "    Additive fixup value");
@@ -501,25 +546,45 @@ namespace SabreTools.Printing
                 }
 
                 // MOD ORD# / PROCEDURE NAME OFFSET / ADDITIVE
+#if NET20 || NET35
+                else if ((entry.TargetFlags & FixupRecordTargetFlags.ImportedReferenceByName) != 0)
+#else
                 else if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ImportedReferenceByName))
+#endif
                 {
                     // 16-bit Object Number/Module Ordinal Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#endif
                         builder.AppendLine(entry.OrdinalIndexImportModuleNameTableWORD, "    Ordinal index import module name table");
                     else
                         builder.AppendLine(entry.OrdinalIndexImportModuleNameTableByte, "    Ordinal index import module name table");
 
                     // 32-bit Target Offset Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitTargetOffsetFlag))
+#endif
                         builder.AppendLine(entry.OffsetImportProcedureNameTableDWORD, "    Offset import procedure name table");
                     else
                         builder.AppendLine(entry.OffsetImportProcedureNameTableWORD, "    Offset import procedure name table");
 
                     // Additive Fixup Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.AdditiveFixupFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#endif
                     {
                         // 32-bit Additive Flag
-                        if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#if NET20 || NET35
+                        if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag) != 0)
+#else
+                        if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#endif
                             builder.AppendLine(entry.AdditiveFixupValueDWORD, "    Additive fixup value");
                         else
                             builder.AppendLine(entry.AdditiveFixupValueWORD, "    Additive fixup value");
@@ -527,19 +592,35 @@ namespace SabreTools.Printing
                 }
 
                 // ORD # / ADDITIVE
+#if NET20 || NET35
+                else if ((entry.TargetFlags & FixupRecordTargetFlags.InternalReferenceViaEntryTable) != 0)
+#else
                 else if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.InternalReferenceViaEntryTable))
+#endif
                 {
                     // 16-bit Object Number/Module Ordinal Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.SixteenBitObjectNumberModuleOrdinalFlag))
+#endif
                         builder.AppendLine(entry.TargetObjectNumberWORD, "    Target object number");
                     else
                         builder.AppendLine(entry.TargetObjectNumberByte, "    Target object number");
 
                     // Additive Fixup Flag
-                    if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#if NET20 || NET35
+                    if ((entry.TargetFlags & FixupRecordTargetFlags.AdditiveFixupFlag) != 0)
+#else
+                    if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.AdditiveFixupFlag))
+#endif
                     {
                         // 32-bit Additive Flag
-                        if (entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#if NET20 || NET35
+                        if ((entry.TargetFlags & FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag) != 0)
+#else
+                        if (!entry.TargetFlags.HasFlag(FixupRecordTargetFlags.ThirtyTwoBitAdditiveFixupFlag))
+#endif
                             builder.AppendLine(entry.AdditiveFixupValueDWORD, "    Additive fixup value");
                         else
                             builder.AppendLine(entry.AdditiveFixupValueWORD, "    Additive fixup value");
