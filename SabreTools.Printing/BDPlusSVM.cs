@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class BDPlusSVM : IPrinter<SVM>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, SVM model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, SVM svm)
         {
             builder.AppendLine("BD+ SVM Information:");

@@ -1,10 +1,15 @@
 using System.Text;
+using SabreTools.Models.IRD;
 
 namespace SabreTools.Printing
 {
-    public class IRD : IPrinter<Models.IRD.File>
+    public class IRD : IPrinter<File>
     {
-        public static void Print(StringBuilder builder, Models.IRD.File ird)
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, File model)
+            => Print(builder, model);
+
+        public static void Print(StringBuilder builder, File ird)
         {
             builder.AppendLine("IRD Information:");
             builder.AppendLine("-------------------------");

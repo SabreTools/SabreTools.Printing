@@ -1,3 +1,5 @@
+using System.Text;
+
 namespace SabreTools.Printing
 {
     /// <summary>
@@ -6,6 +8,11 @@ namespace SabreTools.Printing
     /// <typeparam name="TModel">Type of the top-level model</typeparam>
     public interface IPrinter<TModel>
     {
-        // Empty interface to associate a model with a printer
+        /// <summary>
+        /// Print information associated with a model
+        /// </summary>
+        /// <param name="builder">StringBuilder to append information to</param>
+        /// <param name="model">Model to print</param>
+        void PrintInformation(StringBuilder builder, TModel model);
     }
 }

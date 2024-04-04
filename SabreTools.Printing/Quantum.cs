@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class Quantum : IPrinter<Archive>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Archive model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Archive archive)
         {
             builder.AppendLine("Quantum Information:");

@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class MicrosoftCabinet : IPrinter<Cabinet>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Cabinet model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Cabinet cabinet)
         {
             builder.AppendLine("Microsoft Cabinet Information:");

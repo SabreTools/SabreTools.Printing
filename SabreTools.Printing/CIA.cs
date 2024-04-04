@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class CIA : IPrinter<Models.N3DS.CIA>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Models.N3DS.CIA model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Models.N3DS.CIA cia)
         {
             builder.AppendLine("CIA Archive Information:");

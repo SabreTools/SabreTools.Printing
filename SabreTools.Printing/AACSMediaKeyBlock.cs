@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class AACSMediaKeyBlock : IPrinter<MediaKeyBlock>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, MediaKeyBlock model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, MediaKeyBlock mediaKeyBlock)
         {
             builder.AppendLine("AACS Media Key Block Information:");

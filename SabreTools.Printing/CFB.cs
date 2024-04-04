@@ -6,6 +6,10 @@ namespace SabreTools.Printing
 {
     public class CFB : IPrinter<Binary>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Binary model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Binary binary)
         {
             builder.AppendLine("Compound File Binary Information:");

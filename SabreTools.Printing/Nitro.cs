@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class Nitro : IPrinter<Cart>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Cart model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Cart cart)
         {
             builder.AppendLine("NDS Cart Information:");

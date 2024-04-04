@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class XMID : IPrinter<Models.Xbox.XMID>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Models.Xbox.XMID model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Models.Xbox.XMID xmid)
         {
             builder.AppendLine("Xbox Media Identifier Information:");

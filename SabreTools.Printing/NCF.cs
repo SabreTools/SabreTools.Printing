@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class NCF : IPrinter<File>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, File model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, File file)
         {
             builder.AppendLine("NCF Information:");

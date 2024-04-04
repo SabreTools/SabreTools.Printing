@@ -5,6 +5,10 @@ namespace SabreTools.Printing
 {
     public class PlayJAudioFile : IPrinter<AudioFile>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, AudioFile model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, AudioFile audio)
         {
             builder.AppendLine("PlayJ Audio File Information:");

@@ -12,6 +12,10 @@ namespace SabreTools.Printing
 {
     public class PortableExecutable : IPrinter<Executable>
     {
+        /// <inheritdoc/>
+        public void PrintInformation(StringBuilder builder, Executable model)
+            => Print(builder, model);
+
         public static void Print(StringBuilder builder, Executable executable)
         {
             builder.AppendLine("Portable Executable Information:");
