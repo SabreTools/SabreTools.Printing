@@ -3,7 +3,7 @@ using SabreTools.Models.MSDOS;
 
 namespace SabreTools.Printing
 {
-    public static class MSDOS
+    public class MSDOS : IPrinter<Executable>
     {
         public static void Print(StringBuilder builder, Executable executable)
         {

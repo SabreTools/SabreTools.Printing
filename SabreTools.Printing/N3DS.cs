@@ -3,7 +3,7 @@ using SabreTools.Models.N3DS;
 
 namespace SabreTools.Printing
 {
-    public static class N3DS
+    public class N3DS : IPrinter<Cart>
     {
         public static void Print(StringBuilder builder, Cart cart)
         {

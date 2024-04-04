@@ -1,10 +1,9 @@
 using System.Text;
 using SabreTools.Models.LinearExecutable;
-using SabreTools.Models.MicrosoftCabinet;
 
 namespace SabreTools.Printing
 {
-    public static class LinearExecutable
+    public class LinearExecutable : IPrinter<Executable>
     {
         public static void Print(StringBuilder builder, Executable executable)
         {
@@ -37,7 +36,7 @@ namespace SabreTools.Printing
             Print(builder, executable.DebugInformation);
         }
 
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
+        private static void Print(StringBuilder builder, Models.MSDOS.ExecutableHeader? header)
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");

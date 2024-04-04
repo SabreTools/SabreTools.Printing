@@ -4,7 +4,7 @@ using SabreTools.Models.CFB;
 
 namespace SabreTools.Printing
 {
-    public static class CFB
+    public class CFB : IPrinter<Binary>
     {
         public static void Print(StringBuilder builder, Binary binary)
         {
@@ -116,6 +116,5 @@ namespace SabreTools.Printing
             }
             builder.AppendLine();
         }
-
     }
 }

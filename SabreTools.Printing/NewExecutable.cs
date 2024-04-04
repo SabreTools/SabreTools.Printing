@@ -5,7 +5,7 @@ using static SabreTools.Serialization.Extensions;
 
 namespace SabreTools.Printing
 {
-    public static class NewExecutable
+    public class NewExecutable : IPrinter<Executable>
     {
         public static void Print(StringBuilder builder, Executable executable)
         {
@@ -29,7 +29,7 @@ namespace SabreTools.Printing
             Print(builder, executable.NonResidentNameTable);
         }
 
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
+        private static void Print(StringBuilder builder, Models.MSDOS.ExecutableHeader? header)
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");
@@ -250,7 +250,7 @@ namespace SabreTools.Printing
             builder.AppendLine();
         }
 
-        private static void Print(StringBuilder builder, ModuleReferenceTableEntry?[]? entries, SabreTools.Models.MSDOS.ExecutableHeader? stub, ExecutableHeader? header)
+        private static void Print(StringBuilder builder, ModuleReferenceTableEntry?[]? entries, Models.MSDOS.ExecutableHeader? stub, ExecutableHeader? header)
         {
             builder.AppendLine("  Module-Reference Table Information:");
             builder.AppendLine("  -------------------------");

@@ -3,7 +3,7 @@ using SabreTools.Models.BDPlus;
 
 namespace SabreTools.Printing
 {
-    public static class BDPlusSVM
+    public class BDPlusSVM : IPrinter<SVM>
     {
         public static void Print(StringBuilder builder, SVM svm)
         {

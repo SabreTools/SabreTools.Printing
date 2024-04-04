@@ -3,7 +3,7 @@ using SabreTools.Models.WAD;
 
 namespace SabreTools.Printing
 {
-    public static class WAD
+    public class WAD : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

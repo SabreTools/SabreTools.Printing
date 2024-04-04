@@ -3,7 +3,7 @@ using SabreTools.Models.SGA;
 
 namespace SabreTools.Printing
 {
-    public static class SGA
+    public class SGA : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

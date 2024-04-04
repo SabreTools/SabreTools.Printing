@@ -3,7 +3,7 @@ using SabreTools.Models.AACS;
 
 namespace SabreTools.Printing
 {
-    public static class AACSMediaKeyBlock
+    public class AACSMediaKeyBlock : IPrinter<MediaKeyBlock>
     {
         public static void Print(StringBuilder builder, MediaKeyBlock mediaKeyBlock)
         {

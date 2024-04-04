@@ -10,7 +10,7 @@ using static SabreTools.Serialization.Extensions;
 
 namespace SabreTools.Printing
 {
-    public static class PortableExecutable
+    public class PortableExecutable : IPrinter<Executable>
     {
         public static void Print(StringBuilder builder, Executable executable)
         {
@@ -40,7 +40,7 @@ namespace SabreTools.Printing
             Print(builder, executable.ResourceDirectoryTable);
         }
 
-        private static void Print(StringBuilder builder, SabreTools.Models.MSDOS.ExecutableHeader? header)
+        private static void Print(StringBuilder builder, Models.MSDOS.ExecutableHeader? header)
         {
             builder.AppendLine("  MS-DOS Stub Header Information:");
             builder.AppendLine("  -------------------------");

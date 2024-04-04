@@ -1,10 +1,9 @@
-using System;
 using System.Text;
 using SabreTools.Models.MicrosoftCabinet;
 
 namespace SabreTools.Printing
 {
-    public static class MicrosoftCabinet
+    public class MicrosoftCabinet : IPrinter<Cabinet>
     {
         public static void Print(StringBuilder builder, Cabinet cabinet)
         {

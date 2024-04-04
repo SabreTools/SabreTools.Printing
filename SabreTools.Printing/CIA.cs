@@ -3,9 +3,9 @@ using SabreTools.Models.N3DS;
 
 namespace SabreTools.Printing
 {
-    public static class CIA
+    public class CIA : IPrinter<Models.N3DS.CIA>
     {
-        public static void Print(StringBuilder builder, SabreTools.Models.N3DS.CIA cia)
+        public static void Print(StringBuilder builder, Models.N3DS.CIA cia)
         {
             builder.AppendLine("CIA Archive Information:");
             builder.AppendLine("-------------------------");

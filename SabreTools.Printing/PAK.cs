@@ -3,7 +3,7 @@ using SabreTools.Models.PAK;
 
 namespace SabreTools.Printing
 {
-    public static class PAK
+    public class PAK : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

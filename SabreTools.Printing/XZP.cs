@@ -3,7 +3,7 @@ using SabreTools.Models.XZP;
 
 namespace SabreTools.Printing
 {
-    public static class XZP
+    public class XZP : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

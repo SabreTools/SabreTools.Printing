@@ -3,7 +3,7 @@ using SabreTools.Models.PlayJ;
 
 namespace SabreTools.Printing
 {
-    public static class PlayJAudioFile
+    public class PlayJAudioFile : IPrinter<AudioFile>
     {
         public static void Print(StringBuilder builder, AudioFile audio)
         {

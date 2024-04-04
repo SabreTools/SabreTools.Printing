@@ -3,7 +3,7 @@ using static SabreTools.Models.Xbox.Constants;
 
 namespace SabreTools.Printing
 {
-    public static class XMID
+    public class XMID : IPrinter<Models.Xbox.XMID>
     {
         public static void Print(StringBuilder builder, Models.Xbox.XMID xmid)
         {

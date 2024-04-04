@@ -3,7 +3,7 @@ using SabreTools.Models.BFPK;
 
 namespace SabreTools.Printing
 {
-    public static class BFPK
+    public class BFPK : IPrinter<Archive>
     {
         public static void Print(StringBuilder builder, Archive archive)
         {

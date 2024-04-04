@@ -4,7 +4,7 @@ using static SabreTools.Models.VBSP.Constants;
 
 namespace SabreTools.Printing
 {
-    public static class VBSP
+    public class VBSP : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

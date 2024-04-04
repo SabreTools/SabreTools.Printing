@@ -3,7 +3,7 @@ using SabreTools.Models.Nitro;
 
 namespace SabreTools.Printing
 {
-    public static class Nitro
+    public class Nitro : IPrinter<Cart>
     {
         public static void Print(StringBuilder builder, Cart cart)
         {

@@ -3,7 +3,7 @@ using SabreTools.Models.PFF;
 
 namespace SabreTools.Printing
 {
-    public static class PFF
+    public class PFF : IPrinter<Archive>
     {
         public static void Print(StringBuilder builder, Archive archive)
         {

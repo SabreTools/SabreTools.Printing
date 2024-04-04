@@ -3,7 +3,7 @@ using SabreTools.Models.VPK;
 
 namespace SabreTools.Printing
 {
-    public static class VPK
+    public class VPK : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

@@ -3,7 +3,7 @@ using SabreTools.Models.Quantum;
 
 namespace SabreTools.Printing
 {
-    public static class Quantum
+    public class Quantum : IPrinter<Archive>
     {
         public static void Print(StringBuilder builder, Archive archive)
         {

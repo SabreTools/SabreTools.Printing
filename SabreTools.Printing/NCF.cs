@@ -3,7 +3,7 @@ using SabreTools.Models.NCF;
 
 namespace SabreTools.Printing
 {
-    public static class NCF
+    public class NCF : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {

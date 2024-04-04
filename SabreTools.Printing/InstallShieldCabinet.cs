@@ -1,11 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Text;
 using SabreTools.Models.InstallShieldCabinet;
 
 namespace SabreTools.Printing
 {
-    public static class InstallShieldCabinet
+    public class InstallShieldCabinet : IPrinter<Cabinet>
     {
         public static void Print(StringBuilder builder, Cabinet cabinet)
         {

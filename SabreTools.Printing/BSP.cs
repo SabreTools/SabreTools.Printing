@@ -4,7 +4,7 @@ using static SabreTools.Models.BSP.Constants;
 
 namespace SabreTools.Printing
 {
-    public static class BSP
+    public class BSP : IPrinter<File>
     {
         public static void Print(StringBuilder builder, File file)
         {
@@ -141,6 +141,5 @@ namespace SabreTools.Printing
             }
             builder.AppendLine();
         }
-
     }
 }
