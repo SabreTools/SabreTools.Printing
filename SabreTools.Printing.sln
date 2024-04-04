@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabreTools.Printing", "SabreTools.Printing.csproj", "{4274AA02-00A0-48F1-98C4-B3286E547246}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SabreTools.Printing", "SabreTools.Printing\SabreTools.Printing.csproj", "{4274AA02-00A0-48F1-98C4-B3286E547246}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
