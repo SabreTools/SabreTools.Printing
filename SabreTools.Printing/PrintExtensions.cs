@@ -113,7 +113,7 @@ namespace SabreTools.Printing
         }
 #endif
 
-        #region Printing Implementations
+        #region Static Printing Implementations
 
         /// <summary>
         /// Export the item information as pretty-printed text
