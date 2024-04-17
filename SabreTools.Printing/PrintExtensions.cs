@@ -1,3 +1,4 @@
+using System;
 using System.Text;
 using SabreTools.Printing.Printers;
 using SabreTools.Serialization.Interfaces;
@@ -10,6 +11,22 @@ namespace SabreTools.Printing
     /// </summary>
     public static class PrintExtensions
     {
+        /// <summary>
+        /// Print the item information from a wrapper to console as
+        /// pretty-printed text
+        /// </summary>
+        public static void PrintToConsole(this IWrapper wrapper)
+        {
+            var sb = wrapper.ExportStringBuilder();
+            if (sb == null)
+            {
+                Console.WriteLine("No item information could be generated");
+                return;
+            }
+
+            Console.WriteLine(sb.ToString());
+        }
+
         /// <summary>
         /// Export the item information as a StringBuilder
         /// </summary>
@@ -313,9 +330,9 @@ namespace SabreTools.Printing
         /// </summary>
         private static StringBuilder PrettyPrint(this Wrapper.PlayJPlaylist item)
         {
-           var builder = new StringBuilder();
-           PlayJPlaylist.Print(builder, item.Model);
-           return builder;
+            var builder = new StringBuilder();
+            PlayJPlaylist.Print(builder, item.Model);
+            return builder;
         }
 
         /// <summary>
