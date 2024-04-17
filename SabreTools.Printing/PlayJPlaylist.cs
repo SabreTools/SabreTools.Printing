@@ -3,7 +3,7 @@ using SabreTools.Models.PlayJ;
 
 namespace SabreTools.Printing
 {
-    public class PlayJAudioPlaylist : IPrinter<Playlist>
+    public class PlayJPlaylist : IPrinter<Playlist>
     {
         /// <inheritdoc/>
         public void PrintInformation(StringBuilder builder, Playlist model)
