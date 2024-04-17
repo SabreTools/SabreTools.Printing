@@ -5,7 +5,7 @@ using System.Text;
 namespace SabreTools.Printing
 {
     // TODO: Add extension for printing enums, if possible
-    internal static class Extensions
+    internal static class StringBuilderExtensions
     {
         /// <summary>
         /// Append a line containing a boolean to a StringBuilder
