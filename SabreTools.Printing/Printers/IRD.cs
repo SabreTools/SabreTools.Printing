@@ -2,7 +2,7 @@ using System.Text;
 using SabreTools.Models.IRD;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class IRD : IPrinter<File>
     {

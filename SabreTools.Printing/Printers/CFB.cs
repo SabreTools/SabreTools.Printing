@@ -3,7 +3,7 @@ using System.Text;
 using SabreTools.Models.CFB;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class CFB : IPrinter<Binary>
     {

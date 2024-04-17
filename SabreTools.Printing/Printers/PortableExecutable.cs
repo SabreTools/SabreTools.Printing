@@ -9,7 +9,7 @@ using SabreTools.Models.PortableExecutable;
 using SabreTools.Printing.Interfaces;
 using static SabreTools.Serialization.Extensions;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class PortableExecutable : IPrinter<Executable>
     {

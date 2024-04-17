@@ -2,7 +2,7 @@ using System.Text;
 using SabreTools.Models.MoPaQ;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class MoPaQ : IPrinter<Archive>
     {

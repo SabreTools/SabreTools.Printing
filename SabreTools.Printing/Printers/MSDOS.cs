@@ -2,7 +2,7 @@ using System.Text;
 using SabreTools.Models.MSDOS;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class MSDOS : IPrinter<Executable>
     {

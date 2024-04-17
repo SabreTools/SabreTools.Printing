@@ -3,7 +3,7 @@ using SabreTools.Models.BSP;
 using SabreTools.Printing.Interfaces;
 using static SabreTools.Models.BSP.Constants;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class BSP : IPrinter<File>
     {

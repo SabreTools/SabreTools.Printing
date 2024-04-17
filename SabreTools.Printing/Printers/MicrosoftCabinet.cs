@@ -2,7 +2,7 @@ using System.Text;
 using SabreTools.Models.MicrosoftCabinet;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class MicrosoftCabinet : IPrinter<Cabinet>
     {

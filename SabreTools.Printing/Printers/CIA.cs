@@ -2,7 +2,7 @@ using System.Text;
 using SabreTools.Models.N3DS;
 using SabreTools.Printing.Interfaces;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Printers
 {
     public class CIA : IPrinter<Models.N3DS.CIA>
     {
