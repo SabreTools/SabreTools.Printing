@@ -1,5 +1,6 @@
 using System.Text;
 using SabreTools.Models.NCF;
+using SabreTools.Printing.Interfaces;
 
 namespace SabreTools.Printing
 {

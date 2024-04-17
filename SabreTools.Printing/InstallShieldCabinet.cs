@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SabreTools.Models.InstallShieldCabinet;
+using SabreTools.Printing.Interfaces;
 
 namespace SabreTools.Printing
 {

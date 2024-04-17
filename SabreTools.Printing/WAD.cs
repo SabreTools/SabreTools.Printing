@@ -1,5 +1,6 @@
 using System.Text;
 using SabreTools.Models.WAD;
+using SabreTools.Printing.Interfaces;
 
 namespace SabreTools.Printing
 {

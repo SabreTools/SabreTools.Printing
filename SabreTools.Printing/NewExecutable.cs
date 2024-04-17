@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Text;
 using SabreTools.Models.NewExecutable;
+using SabreTools.Printing.Interfaces;
 using static SabreTools.Serialization.Extensions;
 
 namespace SabreTools.Printing

@@ -1,6 +1,7 @@
 using System;
 using System.Text;
 using SabreTools.Models.CFB;
+using SabreTools.Printing.Interfaces;
 
 namespace SabreTools.Printing
 {

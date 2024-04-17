@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Xml;
 using SabreTools.ASN1;
-using SabreTools.IO;
+using SabreTools.IO.Extensions;
 using SabreTools.Models.PortableExecutable;
+using SabreTools.Printing.Interfaces;
 using static SabreTools.Serialization.Extensions;
 
 namespace SabreTools.Printing

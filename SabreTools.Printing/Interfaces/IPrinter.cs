@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace SabreTools.Printing
+namespace SabreTools.Printing.Interfaces
 {
     /// <summary>
     /// Marks a class as a printer associated with a model

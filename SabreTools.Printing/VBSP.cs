@@ -1,5 +1,6 @@
 using System.Text;
 using SabreTools.Models.VBSP;
+using SabreTools.Printing.Interfaces;
 using static SabreTools.Models.VBSP.Constants;
 
 namespace SabreTools.Printing
