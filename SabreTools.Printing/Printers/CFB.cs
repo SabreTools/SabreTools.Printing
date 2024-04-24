@@ -66,7 +66,7 @@ namespace SabreTools.Printing.Printers
             builder.AppendLine();
         }
 
-        private static void Print(StringBuilder builder, SectorNumber?[]? sectorNumbers, string name)
+        private static void Print(StringBuilder builder, SectorNumber[]? sectorNumbers, string name)
         {
             builder.AppendLine($"  {name} Sectors Information:");
             builder.AppendLine("  -------------------------");

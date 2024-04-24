@@ -1141,18 +1141,18 @@ namespace SabreTools.Printing.Printers
                         continue;
                     }
 
-                    if (menuItem.NormalMenuText != null)
+                    if (menuItem is NormalMenuItem normalMenuItem)
                     {
-                        builder.AppendLine($"{padding}  Resource info: {menuItem.NormalResInfo} (0x{menuItem.NormalResInfo:X})");
-                        builder.AppendLine(menuItem.NormalMenuText, $"{padding}  Menu text");
+                        builder.AppendLine($"{padding}  Resource info: {normalMenuItem.NormalResInfo} (0x{normalMenuItem.NormalResInfo:X})");
+                        builder.AppendLine(normalMenuItem.NormalMenuText, $"{padding}  Menu text");
                     }
-                    else
+                    else if (menuItem is PopupMenuItem popupMenuItem)
                     {
-                        builder.AppendLine($"{padding}  Item type: {menuItem.PopupItemType} (0x{menuItem.PopupItemType:X})");
-                        builder.AppendLine($"{padding}  State: {menuItem.PopupState} (0x{menuItem.PopupState:X})");
-                        builder.AppendLine(menuItem.PopupID, $"{padding}  ID");
-                        builder.AppendLine($"{padding}  Resource info: {menuItem.PopupResInfo} (0x{menuItem.PopupResInfo:X})");
-                        builder.AppendLine(menuItem.PopupMenuText, $"{padding}  Menu text");
+                        builder.AppendLine($"{padding}  Item type: {popupMenuItem.PopupItemType} (0x{popupMenuItem.PopupItemType:X})");
+                        builder.AppendLine($"{padding}  State: {popupMenuItem.PopupState} (0x{popupMenuItem.PopupState:X})");
+                        builder.AppendLine(popupMenuItem.PopupID, $"{padding}  ID");
+                        builder.AppendLine($"{padding}  Resource info: {popupMenuItem.PopupResInfo} (0x{popupMenuItem.PopupResInfo:X})");
+                        builder.AppendLine(popupMenuItem.PopupMenuText, $"{padding}  Menu text");
                     }
                 }
             }

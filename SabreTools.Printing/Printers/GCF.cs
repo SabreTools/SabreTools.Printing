@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Text;
 using SabreTools.Models.GCF;
 using SabreTools.Printing.Interfaces;
@@ -33,7 +34,7 @@ namespace SabreTools.Printing.Printers
 
             // Directory and Directory Maps
             Print(builder, file.DirectoryHeader);
-            Print(builder, file.DirectoryEntries);
+            Print(builder, file.DirectoryEntries, file.DirectoryNames);
             // TODO: Should we print out the entire string table?
             Print(builder, file.DirectoryInfo1Entries);
             Print(builder, file.DirectoryInfo2Entries);
@@ -249,7 +250,7 @@ namespace SabreTools.Printing.Printers
             builder.AppendLine();
         }
 
-        private static void Print(StringBuilder builder, DirectoryEntry?[]? entries)
+        private static void Print(StringBuilder builder, DirectoryEntry?[]? entries, Dictionary<long, string?>? entryNames)
         {
             builder.AppendLine("  Directory Entries Information:");
             builder.AppendLine("  -------------------------");
@@ -271,7 +272,7 @@ namespace SabreTools.Printing.Printers
                 }
 
                 builder.AppendLine(entry.NameOffset, "    Name offset");
-                builder.AppendLine(entry.Name, "    Name");
+                builder.AppendLine(entryNames![entry.NameOffset], "    Name");
                 builder.AppendLine(entry.ItemSize, "    Item size");
                 builder.AppendLine(entry.ChecksumIndex, "    Checksum index");
                 builder.AppendLine($"    Directory flags: {entry.DirectoryFlags} (0x{entry.DirectoryFlags:X})");

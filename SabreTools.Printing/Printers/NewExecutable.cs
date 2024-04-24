@@ -282,7 +282,7 @@ namespace SabreTools.Printing.Printers
             builder.AppendLine();
         }
 
-        private static void Print(StringBuilder builder, Dictionary<ushort, ImportedNameTableEntry?>? entries)
+        private static void Print(StringBuilder builder, Dictionary<ushort, ImportedNameTableEntry>? entries)
         {
             builder.AppendLine("  Imported-Name Table Information:");
             builder.AppendLine("  -------------------------");
